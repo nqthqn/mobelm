@@ -1,0 +1,85 @@
+<html>
+<head>
+  <style>
+    .container {
+      list-style: none;
+      display: flex;
+      justify-content: left;
+      flex-direction:column;
+    }
+    * {
+      font-family: Georgia, serif;
+      font-size: 1em;
+    }
+    span, h1{
+      padding:1em;
+    }
+    body {
+          margin:0px;
+    }
+    .delete {
+      padding: .5em .5em 0em .5em;
+      font-size: .6em; 
+      color: white;
+      background: red;
+    }
+
+    .white {
+      background:white;
+      color:black;
+    }
+    html {
+      background: white;
+      color: black;
+    }
+    input {
+      border:1px solid black;
+      margin: 1em;
+      padding: 1em;
+    }
+    button {
+      border: none;
+      padding:1em;
+      margin:1em;
+    }
+    p {margin:1em;}
+    .black {
+      background: black;
+      color: white;
+    }
+    h1 {
+          font-size: 3em;
+    }
+    
+    .godfather {
+      background:black;
+      color:white;
+      width:100%;
+    }
+    ul {list-style-type: square;}
+    #footer img {
+          text-align:right;
+    }
+    .skip {
+      text-align:right;
+      float:right;
+    }
+    a {text-decoration:underline;}
+    a:hover, button:hover {cursor:pointer;}
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <audio id="ping"> <source src="https://www.freesound.org/data/previews/91/91926_7037-lq.mp3" type="audio/mpeg"> </audio>
+  <script>
+    var node = document.getElementById('app');
+    var app = Elm.MobTime.embed(node);
+    
+    app.ports.pinger.subscribe(function(model) {
+      document.getElementById("ping").play()
+    });
+
+    
+  </script>
+</body>
+</html>
